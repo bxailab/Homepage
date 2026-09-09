@@ -386,6 +386,7 @@ main > section:first-child{border-top:0}
 html[lang="ko"] .pagetitle h1{letter-spacing:-.02em}
 
 /* single-file views */
+[hidden]{display:none!important}
 .view[hidden]{display:none}
 .backtop{background:none;border:0;padding:0;font:inherit;color:var(--ink-soft);
   cursor:pointer;text-decoration:underline;text-underline-offset:3px}
@@ -1648,6 +1649,7 @@ var PAGES={home:1,people:1,publications:1,projects:1,contact:1};
       active=i;
       tabs.forEach(function(o,j){o.setAttribute('aria-selected',j===i);pans[j].hidden=(j!==i);});
       demos[i].resize();
+      if(REDUCE){ for(var k=0;k<300;k++) demos[i].step(); }
     });
   });
 
